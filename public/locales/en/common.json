@@ -1,1 +1,22 @@
-{}
+{
+    "home": "Home",
+    "blog": "Blog",
+    "contact": "Contact",
+    "downloadCV": "Download CV",
+    "copyright": "© 2022 All rights reserved",
+    "firstName": "Furkan",
+    "lastName": "Ozyurt",
+    "jobTitle": "Front-end Developer",
+    "age": "Age",
+    "location": "Location",
+    "about": "About",
+    "aboutText": "Hi everyone, my name is Furkan. I worked freelance and full-time front-end developer for 3 years. In the first steps my career, I used HTML, CSS ,JS. Then I develop projects with React, Next.js, Vue.js. Same time I develop Mobile Apps with React Native",
+    "skills": "Skills",
+    "mobileApplication": "Mobile App Development",
+    "mobileApplicationDescription": "I can develop app for Android and IOS device with React Native",
+    "webAppDevelop": "Web App Development",
+    "webAppDevelopDescription": "I can develop web sites and web apps with React, Vue.js, Next.js, Tailwind CSS",
+    "lastPublishedBlogs": "Last Published Blogs",
+    "myProjects": "My Projects",
+    "myName": "My name is Furkan Özyurt,"
+}
