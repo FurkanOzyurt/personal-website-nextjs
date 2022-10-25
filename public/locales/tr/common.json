@@ -2,7 +2,7 @@
     "home": "Anasayfa",
     "blog": "Blog",
     "contact": "İletişim",
-    "downloadCV": "CV İndir",
+    "downloadCV": "CV INDIR",
     "copyright": "© 2022 Tüm hakları saklıdır",
     "firstName": "Furkan",
     "lastName": "Ozyurt",
@@ -16,7 +16,7 @@
     "mobileApplicationDescription": "React Native kullanarak IOS ve Android cihazlar için uygulama geliştirebilirim.",
     "webAppDevelop": "Web Uygulama Geliştirme",
     "webAppDevelopDescription": "React, Vue.js, Next.js, Tailwind CSS kullanarak web uygulamalarınızı ve sitelerinizi geliştirebilirim.",
-    "lastPublishedBlogs": "Last Published Blogs",
-    "myProjects": "My Projects",
-    "myName": "My name is Furkan Özyurt,"
+    "lastPublishedBlogs": "Son Yazılarım",
+    "myProjects": "Projelerim",
+    "myName": "Ben Furkan Özyurt,"
 }

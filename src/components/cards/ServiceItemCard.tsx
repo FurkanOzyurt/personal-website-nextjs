@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "phosphor-react";
 import { FC, PropsWithChildren } from "react";
 
 interface IServiceItemCard extends PropsWithChildren {
@@ -37,7 +38,7 @@ const ServiceItemCard: FC<IServiceItemCard> = (props) => {
         <p>{t(description)}</p>
         <Link href={buttonUrl}>
           <a className="icon-link">
-            {t(buttonText)} <i className="ph-arrow-right-bold"></i>
+            {t(buttonText)} <ArrowRight size={12} weight="bold" />
           </a>
         </Link>
       </div>

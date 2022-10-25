@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import { Envelope, LinkedinLogo } from "phosphor-react";
 import React, { FC } from "react";
 
 const MainInformationCard: FC = () => {
@@ -24,7 +25,7 @@ const MainInformationCard: FC = () => {
         <ul className="flex gap-4">
           <li>
             <a href="#" target="_blank">
-              <i className="ph-linkedin-logo-fill"></i>
+              <LinkedinLogo size={24} weight="fill" />
             </a>
           </li>
         </ul>
@@ -44,7 +45,7 @@ const MainInformationCard: FC = () => {
         <div className="divider w-full my-7"></div>
         <button className="fo-button uppercase gap-1">
           {t("contact")}
-          <i className="ph-envelope text-lg"></i>
+          <Envelope size={18} />
         </button>
       </div>
     </div>

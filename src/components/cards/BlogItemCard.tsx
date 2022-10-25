@@ -1,6 +1,7 @@
 import Link from "next/link";
 import moment from "moment";
 import { FC, PropsWithChildren } from "react";
+import Image from "next/image";
 
 interface IBlogItemCard extends PropsWithChildren {
   title: string;
@@ -17,10 +18,12 @@ const BlogItemCard: FC<IBlogItemCard> = (props) => {
     <div className="blog-item">
       <Link href={url}>
         <a className="thumbnail">
-          <img
+          <Image
             width="500"
             height="500"
-            src="https://elanta.app/nazar/trueman-demo/light/img/blog/b1.jpg"
+            layout="fill"
+            alt={title}
+            src="/images/blog.jpeg"
           />
         </a>
       </Link>

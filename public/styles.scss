@@ -25,7 +25,7 @@ body {
 .fo-button {
   @apply px-6 py-3 text-xs font-semibold tracking-[2px];
 }
-.fo-button i {
+.fo-button svg {
   margin-left: 4px;
 }
 @media (min-width: 576px) {
@@ -64,14 +64,13 @@ header {
     }
   }
   nav ul {
-    @apply lg:mr-5;
     li {
       @apply relative;
       a {
         @apply text-light-text truncate px-5 uppercase text-xs tracking-[2px] font-semibold lg:h-[80px] flex items-center lgx:justify-center lgx:mb-4;
       }
       &:before {
-        @apply absolute content-[''] bottom-0 left-0 h-1 bg-primary transition-transform duration-300 w-full scale-x-0;
+        @apply absolute lg:content-[''] bottom-0 left-0 h-1 bg-primary transition-transform duration-300 w-full scale-x-0;
       }
       &:hover:before {
         @apply scale-x-100;
@@ -83,6 +82,54 @@ header {
   }
   .header-menu {
     @apply lg:hidden flex lgx:justify-end h-[80px] items-center;
+  }
+  .dropdown-container {
+    @apply lg:h-[80px] relative cursor-pointer;
+    &,
+    button {
+      @apply items-center justify-center flex;
+    }
+
+    button,
+    .dropdown-item {
+      @apply items-center justify-center flex uppercase text-light-text text-xs tracking-[2px] font-semibold;
+      svg {
+        @apply ml-1.5;
+      }
+    }
+    button {
+      @apply lgx:hidden;
+    }
+    &:before {
+      @apply absolute lg:content-[''] bottom-0 left-0 h-1 bg-primary transition-transform duration-300 w-full scale-x-0;
+    }
+    &:hover:before {
+      @apply scale-x-100;
+    }
+    .dropdown {
+      @apply flex lg:flex-col gap-2 lg:drop-shadow-md lg:bg-light-white px-3 py-3 lg:top-2/4 lg:absolute lg:min-w-[100px] rounded-[10px] lg:left-2/4 lg:transform lg:-translate-x-2/4 lg:translate-y-5 lg:opacity-0 transition-all lg:scale-0 z-[11];
+      &:after {
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid;
+        @apply lg:content-[''] block w-0 h-0 absolute bottom-full left-2/4 transform -translate-x-2/4 border-b-light-white z-[10];
+      }
+      &:before {
+        @apply lg:content-[''] w-full h-5 absolute -top-5 left-0 bg-transparent z-[9];
+      }
+      .dropdown-item {
+        @apply rounded-[5px] bg-light-white py-1.5 lgx:px-4;
+        a {
+          @apply flex w-full justify-center;
+        }
+        &.active {
+          @apply bg-gray-200/50;
+        }
+      }
+    }
+    &:hover .dropdown {
+      @apply top-full scale-100 opacity-100;
+    }
   }
 }
 @media (max-width: 992px) {
@@ -165,6 +212,7 @@ section.blog {
   }
   .thumbnail {
     padding-bottom: 60%;
+    @apply relative block;
     img {
       @apply object-cover transform transition-transform duration-300;
     }
@@ -190,7 +238,7 @@ footer .footer-content {
 section.projects .project-item {
   @apply rounded-[10px] overflow-hidden relative;
   .thumbnail {
-    @apply relative after:content-[''] after:pb-[100%] after:w-full after:block;
+    @apply relative after:content-[''] after:w-full after:block;
     img {
       @apply absolute top-0 left-0 w-full h-full object-cover;
     }
@@ -357,10 +405,10 @@ ul.card-data {
 
 .icon-link {
   @apply flex items-center gap-1;
-  i {
+  svg {
     @apply transition-all scale-x-0 origin-left;
   }
-  &:hover i {
+  &:hover svg {
     @apply scale-x-100;
   }
 }

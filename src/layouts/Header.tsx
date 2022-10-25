@@ -1,17 +1,28 @@
+import React, { FC, useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import React, { FC, useState } from "react";
+import { ArrowDown, CaretDown, List, X } from "phosphor-react";
 
 interface IHeaderProps {}
 
 const Header: FC<IHeaderProps> = (props) => {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
+
+  const router = useRouter();
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
+  const [languages, setLanguages] = useState([]);
   const openMenu = () => {
     setMobileMenuVisibility(true);
   };
+  useEffect(() => {
+    const options: any = i18n.options;
+    setLanguages(options.locales);
+  }, [i18n.options]);
   const closeMenu = () => {
     setMobileMenuVisibility(false);
   };
+
   return (
     <header className={`section-space ${mobileMenuVisibility && "active"}`}>
       <div className="fo-container flex items-center justify-between">
@@ -21,7 +32,7 @@ const Header: FC<IHeaderProps> = (props) => {
         </a>
         <div className="header-menu">
           <button type="button" onClick={openMenu} className="open-menu">
-            <i className="ph-list-bold text-xl"></i>
+            <List size={20} weight="bold" />
           </button>
         </div>
         <div className="menu">
@@ -37,7 +48,7 @@ const Header: FC<IHeaderProps> = (props) => {
                   onClick={closeMenu}
                   className="close-menu"
                 >
-                  <i className="ph-x-bold text-[25px]"></i>
+                  <X size={25} weight="bold" />
                 </button>
               </div>
             </div>
@@ -59,9 +70,30 @@ const Header: FC<IHeaderProps> = (props) => {
                   </a>
                 </li>
               </ul>
-              <button className="fo-button">
-                {t("downloadCV")}{" "}
-                <i className="ph-arrow-down-bold text-base"></i>
+              <div className="lg:px-5 dropdown-container">
+                <button>
+                  {i18n.language}
+                  <CaretDown size={14} weight="bold" />
+                </button>
+                <div className="dropdown">
+                  {languages?.map((item: string, key: number) => {
+                    return (
+                      <div
+                        key={key}
+                        className={`dropdown-item ${
+                          i18n.language === item && "active"
+                        }`}
+                      >
+                        <Link href={router.pathname} locale={item}>
+                          <a>{item}</a>
+                        </Link>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <button className="fo-button lg:ml-5 lgx:mt-4">
+                {t("downloadCV")} <ArrowDown size={16} weight="bold" />
               </button>
             </div>
             <div className="w-full lg:hidden flex justify-center text-xs">
