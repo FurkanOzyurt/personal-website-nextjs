@@ -1,1 +1,22 @@
-{}
+{
+    "home": "Anasayfa",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "downloadCV": "CV INDIR",
+    "copyright": "© 2022 Tüm hakları saklıdır",
+    "firstName": "Furkan",
+    "lastName": "Ozyurt",
+    "jobTitle": "Front-end Geliştirici",
+    "age": "Yaş",
+    "location": "Konum",
+    "about": "Hakkımda",
+    "aboutText": "Herkese Merhaba. 3 yıl boyunca freelance ve tam zamanlı olarak çalıştım. Kariyerimin ilk adımlarında HTML, CSS ve JS kullandım. Sonrasında React, Next.js, Vue.js kullanarak projeler geliştirdim. Aynı zamanda mobile uygulama geliştirmek için React Native kullanıyorum.",
+    "skills": "Yeteneklerim",
+    "mobileApplication": "Mobil Uygulama Geliştirme",
+    "mobileApplicationDescription": "React Native kullanarak IOS ve Android cihazlar için uygulama geliştirebilirim.",
+    "webAppDevelop": "Web Uygulama Geliştirme",
+    "webAppDevelopDescription": "React, Vue.js, Next.js, Tailwind CSS kullanarak web uygulamalarınızı ve sitelerinizi geliştirebilirim.",
+    "lastPublishedBlogs": "Son Yazılarım",
+    "myProjects": "Projelerim",
+    "myName": "Ben Furkan Özyurt,"
+}

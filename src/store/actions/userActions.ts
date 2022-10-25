@@ -11,6 +11,6 @@ export const getMyUserData = () => async (dispatch: Dispatch) => {
       data: response,
     });
   } catch (error) {
-    dispatch(createGlobalError("0404") as any);
+    dispatch(createGlobalError("error", "0404") as any);
   }
 };
