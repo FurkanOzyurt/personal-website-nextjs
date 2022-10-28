@@ -4,7 +4,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { connect } from "react-redux";
 
 import { wrapper } from "src/store/store";
-import { getMyUserData } from "src/store/actions/userActions";
 import { Footer, Layout } from "src/layouts";
 import {
   About,
@@ -15,6 +14,7 @@ import {
   Projects,
   Services,
 } from "@/components";
+import { getHomeData } from "@/store/actions/contentActions";
 
 const Home: NextPage = (props) => {
   return (
@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps =
   wrapper.getServerSideProps(
     (store) =>
       async ({ req, res, locale, ...etc }) => {
-        await store.dispatch(getMyUserData() as any);
+        await store.dispatch(getHomeData() as any);
         return {
           props: {
             ...(await serverSideTranslations(locale ?? "en", ["common"])),
