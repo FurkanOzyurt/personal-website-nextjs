@@ -18,5 +18,10 @@
     "webAppDevelopDescription": "I can develop web sites and web apps with React, Vue.js, Next.js, Tailwind CSS",
     "lastPublishedBlogs": "Last Published Blogs",
     "myProjects": "My Projects",
-    "myName": "My name is Furkan Özyurt,"
+    "myName": "My name is Furkan Özyurt,",
+    "blogs": "My Posts",
+    "phone_number": "Phone Number",
+    "email": "E-Posta",
+    "contactFormSuccess" : "Contact form submitted. Thank you for your interest",
+    "contactFormError" : "There was a problem. Please try again later."
 }

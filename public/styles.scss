@@ -175,7 +175,7 @@ section.banner {
     &::after {
       @apply h-full w-full bg-black content-[''] absolute top-0 left-0 opacity-20 rounded-b-[20px];
     }
-    &.banner-title {
+    .banner-title {
       @apply md:text-[45px] text-[35px] leading-tight mb-4;
     }
     ul {
@@ -221,7 +221,7 @@ section.blog {
     }
   }
   .card-style {
-    @apply rounded-t-none;
+    @apply sticky top-[100px];
     .category {
       @apply text-xs font-[700] opacity-60 mb-5;
     }
@@ -300,11 +300,16 @@ section.blog-content {
     @apply mdx:px-7 mdx:py-7;
   }
 }
-.blog-sidebar ul li {
-  @apply pl-[20px] relative text-sm mb-2;
-  &:after {
-    @apply content-[''] absolute top-2/4 left-0 h-2.5 w-2.5 transform -translate-y-2/4 rounded-full;
-    border: solid 3px #afb42b;
+.blog-sidebar {
+  &.card-style {
+    @apply sticky top-[100px];
+  }
+  ul li {
+    @apply pl-[20px] relative text-sm mb-2;
+    &:after {
+      @apply content-[''] absolute top-2/4 left-0 h-2.5 w-2.5 transform -translate-y-2/4 rounded-full;
+      border: solid 3px #afb42b;
+    }
   }
 }
 /* CONTACT */
@@ -423,5 +428,24 @@ ul.card-data {
   textarea,
   input {
     @apply min-h-[45px] rounded-[10px] w-full bg-light-bg shadow-inner outline-none px-[20px] text-sm block py-3;
+  }
+}
+
+.pagination {
+  @apply flex gap-2 justify-center;
+  .pagination-item {
+    a {
+      @apply w-10 h-10 flex justify-center items-center rounded-full transition duration-300 text-sm;
+    }
+    &.active a,
+    &:not(.disabled) a:hover {
+      @apply bg-primary text-white;
+    }
+    &.disabled a {
+      @apply opacity-50;
+    }
+  }
+  .break {
+    @apply flex w-10 h-10 items-center justify-center;
   }
 }

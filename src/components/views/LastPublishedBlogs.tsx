@@ -1,9 +1,11 @@
 import React, { FC } from "react";
 import { BlogItemCard } from "@/components/";
 import { useTranslation } from "next-i18next";
+import { useSelector } from "react-redux";
 
 const LastPublishedBlogs: FC = () => {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
+  const { blog } = useSelector((state: any) => state.content);
   return (
     <section className="blog">
       <h3 className="section-title">
@@ -12,26 +14,22 @@ const LastPublishedBlogs: FC = () => {
       </h3>
 
       <div className="flex flex-wrap -mx-4 mb-7">
-        <div className="md:w-6/12 w-full px-4 mb-4">
-          <BlogItemCard
-            title="Create your own beauty blog with Trueman"
-            author="Furkan Ö."
-            categories="Next.js"
-            date={new Date()}
-            url={"create-your-own"}
-            imageUrl="/images/blog.jpeg"
-          />
-        </div>
-        <div className="md:w-6/12 w-full px-4 mb-4">
-          <BlogItemCard
-            title="Create your own beauty blog with Trueman"
-            author="Furkan Ö."
-            categories="Next.js"
-            date={new Date()}
-            url={"create-your-own"}
-            imageUrl="/images/blog.jpeg"
-          />
-        </div>
+        {blog?.length
+          ? blog?.map((item: any, key: number) => {
+              return (
+                <div key={key} className="md:w-6/12 w-full px-4 mb-4">
+                  <BlogItemCard
+                    title={item["title_" + i18n.language]}
+                    author={item["author"]}
+                    categories={item["categories"]}
+                    date={item.createdDate}
+                    url={item["url_" + i18n.language]}
+                    imageUrl="/images/blog.jpeg"
+                  />
+                </div>
+              );
+            })
+          : ""}
       </div>
     </section>
   );
