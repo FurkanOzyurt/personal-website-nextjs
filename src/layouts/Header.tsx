@@ -26,10 +26,12 @@ const Header: FC<IHeaderProps> = (props) => {
   return (
     <header className={`section-space ${mobileMenuVisibility && "active"}`}>
       <div className="fo-container flex items-center justify-between">
-        <a href="index.html" className="name-title">
-          {t("firstName")}
-          <span>{t("lastName")}</span>
-        </a>
+        <Link href={"/"}>
+          <a className="name-title">
+            {t("firstName")}
+            <span>{t("lastName")}</span>
+          </a>
+        </Link>
         <div className="header-menu">
           <button type="button" onClick={openMenu} className="open-menu">
             <List size={20} weight="bold" />
@@ -55,19 +57,19 @@ const Header: FC<IHeaderProps> = (props) => {
             <div className="lg:flex lg:items-center">
               <ul className="lg:flex">
                 <li className="active">
-                  <a onClick={closeMenu} href="index.html">
-                    {t("home")}
-                  </a>
+                  <Link href={"/"}>
+                    <a onClick={closeMenu}>{t("home")}</a>
+                  </Link>
                 </li>
                 <li>
-                  <a onClick={closeMenu} href="blog.html">
-                    {t("blog")}
-                  </a>
+                  <Link href={"/blog"}>
+                    <a onClick={closeMenu}>{t("blog")}</a>
+                  </Link>
                 </li>
                 <li>
-                  <a onClick={closeMenu} href="contact.html">
-                    {t("contact")}
-                  </a>
+                  <Link href={"/contact"}>
+                    <a onClick={closeMenu}>{t("contact")}</a>
+                  </Link>
                 </li>
               </ul>
               <div className="lg:px-5 dropdown-container">
@@ -84,7 +86,7 @@ const Header: FC<IHeaderProps> = (props) => {
                           i18n.language === item && "active"
                         }`}
                       >
-                        <Link href={router.pathname} locale={item}>
+                        <Link href={router.asPath} locale={item}>
                           <a>{item}</a>
                         </Link>
                       </div>

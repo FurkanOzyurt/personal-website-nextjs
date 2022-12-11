@@ -2,6 +2,8 @@ import Link from "next/link";
 import moment from "moment";
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { useTranslation } from "next-i18next";
 
 interface IBlogItemCard extends PropsWithChildren {
   title: string;
@@ -9,14 +11,17 @@ interface IBlogItemCard extends PropsWithChildren {
   imageUrl: string;
   author: string;
   date: Date;
-  categories: string;
+  categories: Array<number | string>;
 }
 
 const BlogItemCard: FC<IBlogItemCard> = (props) => {
-  const { title, url, author, date = new Date(), categories } = props;
+  const { title, url, author, date = new Date(), categories = [] } = props;
+  const { i18n } = useTranslation("common");
+  const { blogCategories } = useSelector((state: any) => state.content);
+
   return (
     <div className="blog-item">
-      <Link href={url}>
+      <Link href={"/" + url}>
         <a className="thumbnail">
           <Image
             width="500"
@@ -29,9 +34,22 @@ const BlogItemCard: FC<IBlogItemCard> = (props) => {
       </Link>
 
       <div className="card-style h-full">
-        <div className="category">{categories}</div>
+        <div className="category">
+          {categories?.map((item: number | string) => {
+            const category = blogCategories.filter(
+              (category: any) => category.id === item
+            )?.[0];
+            if (category) {
+              return (
+                <Link href={"/blog/" + category[`url_${i18n.language}`]}>
+                  <a>{category[`title_${i18n.language}`]}</a>
+                </Link>
+              );
+            }
+          })}
+        </div>
         <h4>
-          <Link href={url}>
+          <Link href={"/" + url}>
             <a>{title}</a>
           </Link>
         </h4>

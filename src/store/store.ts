@@ -17,7 +17,6 @@ const reducer = (state: any, action: AnyAction) => {
       ...state,
       ...action.payload,
     };
-    if (state.user.userData?.id) nextState.user.userData = state.user.userData; // preserve count value on client side navigation
     return nextState;
   } else {
     return rootReducer(state, action);

@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import userReducer from "./userReducer";
+import contentReducer from "./contentReducer";
+import formReducer from "./formReducer";
 
 export default combineReducers({
-  user: userReducer,
+  content: contentReducer,
+  form: formReducer,
 });

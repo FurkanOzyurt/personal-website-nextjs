@@ -18,5 +18,10 @@
     "webAppDevelopDescription": "React, Vue.js, Next.js, Tailwind CSS kullanarak web uygulamalarınızı ve sitelerinizi geliştirebilirim.",
     "lastPublishedBlogs": "Son Yazılarım",
     "myProjects": "Projelerim",
-    "myName": "Ben Furkan Özyurt,"
+    "myName": "Ben Furkan Özyurt,",
+    "blogs": "Blog Yazılarım",
+    "phone_number": "Telefon Numarası",
+    "email": "E-Mail",
+    "contactFormSuccess" : "İletişim formu bize iletildi. İlginiz için teşekkürler.",
+    "contactFormError" : "Bir sorun yaşandı. Lütfen daha sonra tekrar deneyiniz."
 }
