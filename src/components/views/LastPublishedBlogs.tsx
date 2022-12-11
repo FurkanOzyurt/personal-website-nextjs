@@ -19,6 +19,7 @@ const LastPublishedBlogs: FC = () => {
               return (
                 <div key={key} className="md:w-6/12 w-full px-4 mb-4">
                   <BlogItemCard
+                    key={item["url_" + i18n.language] + " " + key}
                     title={item["title_" + i18n.language]}
                     author={item["author"]}
                     categories={item["categories"]}

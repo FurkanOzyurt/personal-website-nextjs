@@ -35,13 +35,16 @@ const BlogItemCard: FC<IBlogItemCard> = (props) => {
 
       <div className="card-style h-full">
         <div className="category">
-          {categories?.map((item: number | string) => {
+          {categories?.map((item: number | string, key: number) => {
             const category = blogCategories.filter(
               (category: any) => category.id === item
             )?.[0];
             if (category) {
               return (
-                <Link href={"/blog/" + category[`url_${i18n.language}`]}>
+                <Link
+                  key={key}
+                  href={"/blog/" + category[`url_${i18n.language}`]}
+                >
                   <a>{category[`title_${i18n.language}`]}</a>
                 </Link>
               );
