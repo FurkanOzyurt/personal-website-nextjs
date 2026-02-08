@@ -17,11 +17,9 @@ const Breadcrumb: FC<IBreadcrumbProps> = (props) => {
       <Image
         src="/images/banner.jpg"
         className="overlay-bg"
-        width={1920}
-        height={1080}
         alt="Banner"
         priority
-        layout="fill"
+        fill
       />
       <div className="fo-container relative z-10">
         <div className="flex flex-wrap -mx-4">
@@ -34,7 +32,7 @@ const Breadcrumb: FC<IBreadcrumbProps> = (props) => {
                     <li>
                       {breadcrumbItem.url ? (
                         <Link href={breadcrumbItem.url}>
-                          <a>{t(breadcrumbItem.title)}</a>
+                          {t(breadcrumbItem.title)}
                         </Link>
                       ) : (
                         t(breadcrumbItem.title)

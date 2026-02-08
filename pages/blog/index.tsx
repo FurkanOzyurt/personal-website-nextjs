@@ -12,15 +12,38 @@ import { useRouter } from "next/router";
 import { CaretLeft, CaretRight } from "phosphor-react";
 import Head from "next/head";
 
+const DOMAIN = "https://furkanozyurt.com";
+
 const Blog: NextPage = (props) => {
   const { i18n } = useTranslation("common");
   const { blog } = useSelector((state: any) => state.content);
   const router = useRouter();
+  const currentLocale = i18n.language;
+  const canonicalUrl =
+    currentLocale === "tr" ? `${DOMAIN}/tr/blog` : `${DOMAIN}/blog`;
+
+  const title = "Blog | Furkan Özyurt";
+  const description =
+    currentLocale === "tr"
+      ? "Furkan Özyurt'un blog yazıları. Web geliştirme, frontend teknolojileri ve yazılım üzerine içerikler."
+      : "Blog posts by Furkan Özyurt. Articles on web development, frontend technologies and software.";
+
   return (
     <Layout>
       <>
         <Head>
-          <title>Blog | Furkan Özyurt</title>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <link rel="canonical" href={canonicalUrl} />
+          <link rel="alternate" hrefLang="en" href={`${DOMAIN}/blog`} />
+          <link rel="alternate" hrefLang="tr" href={`${DOMAIN}/tr/blog`} />
+          <link rel="alternate" hrefLang="x-default" href={`${DOMAIN}/blog`} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:type" content="website" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
         </Head>
         <Breadcrumb
           title="blogs"

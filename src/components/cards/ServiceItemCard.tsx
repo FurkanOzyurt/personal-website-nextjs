@@ -1,6 +1,5 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { FC, PropsWithChildren } from "react";
 
@@ -17,7 +16,7 @@ const ServiceItemCard: FC<IServiceItemCard> = (props) => {
     title,
     description,
     buttonText = "contact",
-    buttonUrl = "/contact",
+    buttonUrl = "mailto:furkanozyurt90@gmail.com",
     imageUrl,
   } = props;
   const { t } = useTranslation("common");
@@ -27,20 +26,18 @@ const ServiceItemCard: FC<IServiceItemCard> = (props) => {
       <div className="card-style service-item h-full">
         <div className="w-[60px]">
           <Image
-            alt="Web Programcılığı"
+            alt={t(title)}
             width={100}
             height={100}
             src={imageUrl}
-            layout="responsive"
+            style={{ width: '100%', height: 'auto' }}
           />
         </div>
         <h4>{t(title)}</h4>
         <p>{t(description)}</p>
-        <Link href={buttonUrl}>
-          <a className="icon-link">
-            {t(buttonText)} <ArrowRight size={12} weight="bold" />
-          </a>
-        </Link>
+        <a href={buttonUrl} className="icon-link">
+          {t(buttonText)} <ArrowRight size={12} weight="bold" />
+        </a>
       </div>
     </div>
   );

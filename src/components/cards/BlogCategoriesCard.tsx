@@ -14,7 +14,7 @@ const BlogCategoriesCard: FC = () => {
           return (
             <li key={key}>
               <Link href={`/blog/${item[`url_${i18n.language}`]}`}>
-                <a>{item[`title_${i18n.language}`]}</a>
+                {item[`title_${i18n.language}`]}
               </Link>
             </li>
           );

@@ -10,7 +10,7 @@ const LastPublishedBlogs: FC = () => {
     <section className="blog">
       <h3 className="section-title">
         {t("lastPublishedBlogs")}
-        <span data-number="03" className="divider"></span>
+        <span data-number="04" className="divider"></span>
       </h3>
 
       <div className="flex flex-wrap -mx-4 mb-7">

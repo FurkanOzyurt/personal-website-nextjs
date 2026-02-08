@@ -26,11 +26,9 @@ const Header: FC<IHeaderProps> = (props) => {
   return (
     <header className={`section-space ${mobileMenuVisibility && "active"}`}>
       <div className="fo-container flex items-center justify-between">
-        <Link href={"/"}>
-          <a className="name-title">
-            {t("firstName")}
-            <span>{t("lastName")}</span>
-          </a>
+        <Link href={"/"} className="name-title">
+          {t("firstName")}
+          <span>{t("lastName")}</span>
         </Link>
         <div className="header-menu">
           <button type="button" onClick={openMenu} className="open-menu">
@@ -57,18 +55,13 @@ const Header: FC<IHeaderProps> = (props) => {
             <div className="lg:flex lg:items-center">
               <ul className="lg:flex">
                 <li className="active">
-                  <Link href={"/"}>
-                    <a onClick={closeMenu}>{t("home")}</a>
+                  <Link href={"/"} onClick={closeMenu}>
+                    {t("home")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/blog"}>
-                    <a onClick={closeMenu}>{t("blog")}</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href={"/contact"}>
-                    <a onClick={closeMenu}>{t("contact")}</a>
+                  <Link href={"/blog"} onClick={closeMenu}>
+                    {t("blog")}
                   </Link>
                 </li>
               </ul>
@@ -87,16 +80,16 @@ const Header: FC<IHeaderProps> = (props) => {
                         }`}
                       >
                         <Link href={router.asPath} locale={item}>
-                          <a>{item}</a>
+                          {item}
                         </Link>
                       </div>
                     );
                   })}
                 </div>
               </div>
-              <button className="fo-button lg:ml-5 lgx:mt-4">
+              <a href="/furkanozyurt-cv.pdf" download className="fo-button lg:ml-5 lgx:mt-4">
                 {t("downloadCV")} <ArrowDown size={16} weight="bold" />
-              </button>
+              </a>
             </div>
             <div className="w-full lg:hidden flex justify-center text-xs">
               {t("copyright")}

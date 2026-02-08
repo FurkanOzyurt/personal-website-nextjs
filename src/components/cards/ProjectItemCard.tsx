@@ -1,43 +1,29 @@
 import React, { FC, PropsWithChildren } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { MagnifyingGlassPlus } from "phosphor-react";
+import { ArrowSquareOut } from "phosphor-react";
 
 interface IProjectItemCard extends PropsWithChildren {
   title: string;
+  description: string;
   url: string;
-  imageUrl: string;
+  tech: string;
 }
 
 const ProjectItemCard: FC<IProjectItemCard> = (props) => {
-  const { title, url, imageUrl } = props;
+  const { title, description, url, tech } = props;
   return (
-    <div className="project-item">
-      <Link href={url}>
-        <a className="thumbnail">
-          <Image
-            width="500"
-            height="500"
-            layout="responsive"
-            src={imageUrl}
-            alt={title}
-          />
-        </a>
-      </Link>
-
-      <div className="info">
-        <div>
-          <h4 className="title">{title}</h4>
-        </div>
-        <div>
-          <Link href={url}>
-            <a className="fo-button-rounded">
-              <MagnifyingGlassPlus size={16} weight="bold" />
-            </a>
-          </Link>
-        </div>
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="project-item card-style block h-full"
+    >
+      <div className="flex justify-between items-start mb-2">
+        <h4 className="font-[700] text-base">{title}</h4>
+        <ArrowSquareOut size={18} weight="bold" className="flex-shrink-0 mt-1" />
       </div>
-    </div>
+      <p className="text-sm text-light-supText mb-3">{description}</p>
+      <span className="text-xs text-light-supText opacity-70">{tech}</span>
+    </a>
   );
 };
 

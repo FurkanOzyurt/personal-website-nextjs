@@ -9,7 +9,7 @@ const Footer: FC<IFooterProps> = (props) => {
     <footer>
       <div className="card-style">
         <div className="footer-content">
-          <div>{t("copyright")}</div>
+          <div>&copy; {new Date().getFullYear()} {t("copyright")}</div>
           <div className="lgx:hidden">
             Developer:
             <span className="text-primary">

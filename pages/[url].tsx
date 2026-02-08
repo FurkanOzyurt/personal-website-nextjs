@@ -14,15 +14,54 @@ import {
 } from "@/store/actions/contentActions";
 import Head from "next/head";
 
+const DOMAIN = "https://furkanozyurt.com";
+
 const BlogContent: NextPage = (props) => {
   const { t, i18n } = useTranslation("common");
   const { blogDetail } = useSelector((state: any) => state.content);
   const router = useRouter();
+  const { url } = router.query;
+  const currentLocale = i18n.language;
+  const blogTitle = blogDetail["title_" + currentLocale] || "";
+  const canonicalUrl =
+    currentLocale === "tr" ? `${DOMAIN}/tr/${url}` : `${DOMAIN}/${url}`;
+
+  const title = `${blogTitle} | Furkan Özyurt`;
+  const description = blogTitle;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blogTitle,
+    author: {
+      "@type": "Person",
+      name: blogDetail.author || "Furkan Özyurt",
+    },
+    datePublished: blogDetail.createdDate || "",
+    url: canonicalUrl,
+    publisher: {
+      "@type": "Person",
+      name: "Furkan Özyurt",
+    },
+  };
+
   return (
     <Layout>
       <>
         <Head>
-          <title>{blogDetail["title_" + i18n.language]} | Furkan Özyurt</title>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <link rel="canonical" href={canonicalUrl} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
         </Head>
         <Breadcrumb
           title={blogDetail["title_" + i18n.language]}

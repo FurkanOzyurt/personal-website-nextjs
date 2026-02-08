@@ -21,16 +21,12 @@ const BlogItemCard: FC<IBlogItemCard> = (props) => {
 
   return (
     <div className="blog-item">
-      <Link href={"/" + url}>
-        <a className="thumbnail">
-          <Image
-            width="500"
-            height="500"
-            layout="fill"
-            alt={title}
-            src="/images/blog.jpeg"
-          />
-        </a>
+      <Link href={"/" + url} className="thumbnail">
+        <Image
+          alt={title}
+          src="/images/blog.jpeg"
+          fill
+        />
       </Link>
 
       <div className="card-style h-full">
@@ -45,7 +41,7 @@ const BlogItemCard: FC<IBlogItemCard> = (props) => {
                   key={key}
                   href={"/blog/" + category[`url_${i18n.language}`]}
                 >
-                  <a>{category[`title_${i18n.language}`]}</a>
+                  {category[`title_${i18n.language}`]}
                 </Link>
               );
             }
@@ -53,7 +49,7 @@ const BlogItemCard: FC<IBlogItemCard> = (props) => {
         </div>
         <h4>
           <Link href={"/" + url}>
-            <a>{title}</a>
+            {title}
           </Link>
         </h4>
         <div className="divider mb-4"></div>

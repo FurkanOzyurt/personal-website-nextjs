@@ -8,7 +8,7 @@ const Services: FC = () => {
     <section className="services mt-7">
       <h3 className="section-title">
         {t("skills")}
-        <span data-number="02" className="divider"></span>
+        <span data-number="03" className="divider"></span>
       </h3>
 
       <div className="flex flex-wrap -mx-4 mb-7">

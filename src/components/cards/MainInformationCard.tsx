@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
-import { Envelope, LinkedinLogo } from "phosphor-react";
+import { Envelope, GithubLogo, LinkedinLogo } from "phosphor-react";
 import React, { FC } from "react";
 
 const MainInformationCard: FC = () => {
@@ -10,11 +10,9 @@ const MainInformationCard: FC = () => {
       <div className="info-card card-style sticky">
         <div className="avatar">
           <Image
-            src="/images/furkan-ozyurt.jpg"
-            width={140}
-            height={140}
+            src="/images/furkan-ozyurt.jpeg"
             alt="Furkan Özyurt Avatar"
-            layout="fill"
+            fill
           />
         </div>
         <h2 className="full-name">
@@ -24,8 +22,18 @@ const MainInformationCard: FC = () => {
         <div className="divider w-full my-7"></div>
         <ul className="flex gap-4">
           <li>
-            <a href="#" target="_blank">
+            <a href="https://linkedin.com/in/furkan-ozyurt/" target="_blank" rel="noreferrer">
               <LinkedinLogo size={24} weight="fill" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/FurkanOzyurt" target="_blank" rel="noreferrer">
+              <GithubLogo size={24} weight="fill" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:furkanozyurt90@gmail.com">
+              <Envelope size={24} weight="fill" />
             </a>
           </li>
         </ul>
@@ -33,20 +41,16 @@ const MainInformationCard: FC = () => {
         <div className="w-full other-information">
           <ul className="flex flex-col gap-4">
             <li>
-              <span>{t("age")}:</span>
-              <span className="data-value age">20</span>
-            </li>
-            <li>
-              <span>{t("location")}:</span>
-              <span className="data-value">IZMIR</span>
+              <span>{t("experience")}:</span>
+              <span className="data-value">{new Date().getFullYear() - 2020}+ {t("years")}</span>
             </li>
           </ul>
         </div>
         <div className="divider w-full my-7"></div>
-        <button className="fo-button uppercase gap-1">
+        <a href="mailto:furkanozyurt90@gmail.com" className="fo-button uppercase gap-1">
           {t("contact")}
           <Envelope size={18} />
-        </button>
+        </a>
       </div>
     </div>
   );

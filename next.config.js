@@ -1,22 +1,34 @@
 // @ts-check
 const { i18n } = require("./next-i18next.config.js");
 const path = require("path");
-// You can remove the following 2 lines when integrating our example.
-const { loadCustomBuildParams } = require("./next-utils.config");
-const { esmExternals = false, tsconfigPath } = loadCustomBuildParams();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    esmExternals,
-  },
   i18n,
   reactStrictMode: true,
-  typescript: {
-    tsconfigPath,
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+        ],
+      },
+    ];
   },
 };
 

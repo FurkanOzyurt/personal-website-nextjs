@@ -236,21 +236,9 @@ footer .footer-content {
 }
 /* PROJECTS */
 section.projects .project-item {
-  @apply rounded-[10px] overflow-hidden relative;
-  .thumbnail {
-    @apply relative after:content-[''] after:w-full after:block;
-    img {
-      @apply absolute top-0 left-0 w-full h-full object-cover;
-    }
-  }
-  .info {
-    @apply bg-white px-[40px] py-[20px] absolute bottom-0 w-full text-base flex justify-between items-center transform transition-transform duration-300 lg:translate-y-full;
-    .title {
-      @apply font-[700];
-    }
-  }
-  &:hover .info {
-    @apply translate-y-0;
+  @apply transition-all duration-200;
+  &:hover {
+    @apply shadow-md -translate-y-0.5;
   }
 }
 
@@ -312,10 +300,7 @@ section.blog-content {
     }
   }
 }
-/* CONTACT */
-section.contact-information {
-  @apply lg:mt-[-130px];
-}
+
 
 /* COMPONENTS */
 
@@ -447,5 +432,53 @@ ul.card-data {
   }
   .break {
     @apply flex w-10 h-10 items-center justify-center;
+  }
+}
+
+/* AI AGENT */
+.ai-agent-card {
+  @apply p-0 overflow-hidden flex flex-col;
+  max-height: 500px;
+}
+.ai-agent-messages {
+  @apply flex-1 overflow-y-auto p-6;
+  min-height: 200px;
+  max-height: 400px;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  &::-webkit-scrollbar-track {
+    @apply bg-light-bg rounded-full;
+  }
+}
+.ai-agent-input-area {
+  @apply flex items-center gap-2 p-4;
+  border-top: 1px solid rgba(225, 225, 235, 0.9);
+}
+.ai-agent-input {
+  @apply min-h-[45px] rounded-[10px] w-full bg-light-bg shadow-inner outline-none px-[20px] text-sm block py-3 flex-1;
+}
+.ai-agent-typing-indicator {
+  @apply inline-flex items-center gap-1;
+  span {
+    @apply w-2 h-2 bg-primary rounded-full inline-block;
+    animation: ai-bounce 1.4s infinite ease-in-out both;
+    &:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+  }
+}
+@keyframes ai-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
   }
 }
