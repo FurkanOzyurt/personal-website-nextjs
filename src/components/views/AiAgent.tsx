@@ -8,11 +8,15 @@ const AiAgent: FC = () => {
   const { t } = useTranslation("common");
   const { messages, isLoading, sendMessage, clearMessages } = useChat();
   const [input, setInput] = useState("");
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (messages.length > 0) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const container = messagesContainerRef.current;
+    if (container && messages.length > 0) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
     }
   }, [messages]);
 
@@ -32,7 +36,7 @@ const AiAgent: FC = () => {
       </h3>
 
       <div className="card-style ai-agent-card">
-        <div className="ai-agent-messages">
+        <div className="ai-agent-messages" ref={messagesContainerRef}>
           {messages.length === 0 && (
             <p className="text-sm opacity-50 text-center py-10">
               {t("aiAgentPlaceholder")}
@@ -49,7 +53,7 @@ const AiAgent: FC = () => {
               }
             />
           ))}
-          <div ref={messagesEndRef} />
+          <div />
         </div>
 
         <form onSubmit={handleSubmit} className="ai-agent-input-area">
