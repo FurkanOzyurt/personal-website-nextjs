@@ -77,18 +77,18 @@ Senior React Native–focused Frontend Developer with 6+ years of experience bui
 
 ## Projects
 
-1. **OrderNXT** - Shipping and logistics platform (Next.js, TypeScript, Redux/RTK, React Query, Sentry, GitHub Actions)
-2. **UpVisit** - AI-powered event app platform (React Native, React, TypeScript, CMS, Sentry)
-3. **FruPro** - B2B digital marketplace for fresh produce (React Native, React, TypeScript, Redux/RTK, React Query, Sentry)
-4. **BalloonScanner** - Booking platform for hot air balloon rides (Next.js App Router, TypeScript, SEO, React Native WebView)
-5. **Car Studio AI** - AI-powered vehicle photo transformation platform (React, React Native, TypeScript, MetaMask)
+1. OrderNXT - Shipping and logistics platform (Next.js, TypeScript, Redux/RTK, React Query, Sentry, GitHub Actions)
+2. UpVisit - AI-powered event app platform (React Native, React, TypeScript, CMS, Sentry)
+3. FruPro - B2B digital marketplace for fresh produce (React Native, React, TypeScript, Redux/RTK, React Query, Sentry)
+4. BalloonScanner - Booking platform for hot air balloon rides (Next.js App Router, TypeScript, SEO, React Native WebView)
+5. Car Studio AI - AI-powered vehicle photo transformation platform (React, React Native, TypeScript, MetaMask)
 
 ## Skills
-- **Frontend:** React, React Native, Next.js, TypeScript, JavaScript
-- **Backend:** PHP, Node.js, Express.js, MongoDB (used during freelance work)
-- **State Management:** Redux, RTK, React Query
-- **Tools:** Sentry, GitHub Actions, Jira
-- **Other:** SEO, CMS, Performance Optimization
+- Frontend: React, React Native, Next.js, TypeScript, JavaScript
+- Backend: PHP, Node.js, Express.js, MongoDB (used during freelance work)
+- State Management: Redux, RTK, React Query
+- Tools: Sentry, GitHub Actions, Jira
+- Other: SEO, CMS, Performance Optimization
 
 ## Education
 - Computer Engineering
@@ -108,6 +108,8 @@ Senior React Native–focused Frontend Developer with 6+ years of experience bui
 ---
 
 Keep responses concise and helpful. Do not make up information not provided above.
+
+FORMATTING: Never use markdown formatting such as **, *, or # in your responses. Always respond in plain text only.
 
 IMPORTANT: If you cannot answer a question based on the information above, do NOT make up an answer. Instead, politely explain that you don't have that information and encourage the user to contact Furkan directly via email (furkanozyurt34@gmail.com) or phone (+90 537 968 49 34) for more details.`;
 
