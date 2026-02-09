@@ -10,7 +10,7 @@
     "experience": "Deneyim",
     "years": "Yıl",
     "about": "Hakkımda",
-    "aboutText": "Senior React Native–focused Frontend Developer with 6+ years of experience building web and mobile products with React and TypeScript. At UpVisit, I delivered CMS and mobile event applications used by 10K+ users. At FruPro, we reduced Sentry-reported production bugs by ~80% within 4 months and improved performance metrics (startup time, FPS, bundle size, crash-free rate). At CargoNXT, I streamlined release workflows by implementing Sentry- and Jira-triggered agent automation and automated test workflows.",
+    "aboutText": "React Native odaklı Senior Frontend Developer olarak 6 yılı aşkın süredir React ve TypeScript ile web ve mobil ürünler geliştiriyorum. UpVisit'te 10.000'den fazla kullanıcıya ulaşan CMS ve mobil etkinlik uygulamaları geliştirdim. FruPro'da Sentry'de raporlanan production hatalarını 4 ay içinde yaklaşık %80 oranında azalttık ve performans metriklerini (başlangıç süresi, FPS, bundle boyutu, crash-free oranı) iyileştirdik. CargoNXT'de Sentry ve Jira tabanlı ajan otomasyonu ile otomatik test iş akışları kurarak release süreçlerini optimize ettim.",
     "skills": "Yeteneklerim",
     "mobileApplication": "Mobil Uygulama Geliştirme",
     "mobileApplicationDescription": "React Native ile iOS ve Android platformlarına yönelik yüksek performanslı, cross-platform mobil uygulamalar geliştiriyorum. Akıcı animasyonlar, optimize edilmiş bundle boyutları ve ölçeklenebilir, crash-free kullanıcı deneyimleri sunuyorum.",
